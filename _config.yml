@@ -1,0 +1,3 @@
+markdown: redcarpet
+baseurl: /linguagens-final
+exclude: ['README.md']
