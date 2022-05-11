@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #07001d;
+    --secondary-color: blue;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "arial", sans-serif;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    background-color: white;
+}
+.active {
+    color: var(--secondary-color);
+}
+
+#container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    height: 72px;
+    padding: 1rem;
+}
+#logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#burger {
+    display: block;
+}
+
+#menu {
+    display: none;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    margin: 0;
+
+    background-color: white;
+    list-style: none;
+    gap: .5rem;
+}
+#menu a {
+    transition: 0.4s;
+}
+#menu a:hover {
+    color: var(--primary-color);
+}
+
+#menu-mobile {
+    display: block;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 0;
+    z-index: 1000;
+    transition: .6s;
+    top: 72px;
+    right: 0px;
+    background-color: white;
+    visibility: hidden;
+    overflow-y: hidden;
+}
+#menu-mobile li {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, .05);
+}
+
+#container.isactive #menu-mobile {
+    height: 100vh;
+    visibility: visible;
+    overflow-y: auto;
+}
+
+#burger {
+    padding: .5rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: .5rem;
+}
+
+#burger span {
+    display: block;
+    width: 20px;
+    border-top: 2px solid;
+    color: var(--primary-color);
+}
+
+#burger span::before, #burger span::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    margin-top: 5px;
+    transition: .3s;
+    position: relative;
+}
+
+#container.isactive #burger span {
+    border-top-color: transparent;
+}
+
+#container.isactive #burger span::before {
+    transform: rotate(135deg);
+}
+#container.isactive #burger span::after {
+    transform: rotate(-135deg);
+    top: -7px;
+}
+
+
+
+
+@media (min-width: 768px) {
+    #burger {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+    }
+
+    #menu a {
+        display: block;
+        padding: .5rem;
+        margin: 0;
+        border-bottom: none;
+    }
+
+    #container.isactive #menu-mobile {
+        visibility: hidden;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

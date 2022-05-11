@@ -1,0 +1,5 @@
+<ul class="projects-list">
+    {% for item in site.data.projects %}
+    <li><a class="{% if page.url == item.url %}active{% endif %}" href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+</ul>
