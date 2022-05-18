@@ -1,3 +1,8 @@
 markdown: redcarpet
 baseurl: /linguagens-final
 exclude: ['README.md']
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path
