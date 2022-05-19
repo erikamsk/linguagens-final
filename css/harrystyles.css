@@ -1,24 +1,116 @@
 :root {
     --primary-color: #07001d;
-    --secondary-color: blue;
+    --secondary-color: #de5197;
 }
 
-body {
+* {
     margin: 0;
     padding: 0;
+
+    box-sizing: border-box;
     font-family: "arial", sans-serif;
     background-color: white;
 }
 
+body {
+    max-width: 1080px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    max-width: 1280px;
+    margin: 0 32px;
+}
+
+.container-grid, .card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.active {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/*Typescale*/
+
+h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin: 40px 0;
+}
+h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin: 0.5rem 0 1rem 0;
+}
+h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+
+
+.highlight {
+    color: var(--secondary-color);
+}
+.tag {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+}
 a {
     text-decoration: none;
     color: var(--primary-color);
+    text-transform: lowercase;
 }
 a:hover {
     text-decoration: underline;
-    color: blue;
+    color: var(--secondary-color)
+}
+.greeting {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
 }
 
+
+
+
+
+
+
+
+
+
+
+/*NAV*/
 nav {
     position: fixed;
     top: 0;
@@ -27,9 +119,6 @@ nav {
     z-index: 99;
 
     background-color: white;
-}
-.active {
-    color: var(--secondary-color);
 }
 
 #container {
@@ -40,10 +129,10 @@ nav {
     align-items: center;
     justify-content: space-between;
 
-    box-sizing: border-box;
     height: 72px;
     padding: 1rem;
 }
+
 #logo {
     font-size: 1.25rem;
     font-weight: 600;
@@ -64,22 +153,23 @@ nav {
     gap: .5rem;
 }
 #menu a {
+    font-size: 1.25rem;
     transition: 0.4s;
-}
-#menu a:hover {
-    color: var(--primary-color);
 }
 
 #menu-mobile {
     display: block;
     position: absolute;
+    top: 72px;
+    right: 0px;
+
     margin: 0;
     width: 100%;
     height: 0;
     z-index: 1000;
+
     transition: .6s;
-    top: 72px;
-    right: 0px;
+
     background-color: white;
     visibility: hidden;
     overflow-y: hidden;
@@ -89,6 +179,10 @@ nav {
     padding: 1rem 0;
     margin: 0 1rem;
     border-bottom: 2px solid rgba(0, 0, 0, .05);
+}
+#menu-mobile a {
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 #container.isactive #menu-mobile {
@@ -138,7 +232,147 @@ nav {
 
 
 
+
+
+
+
+/*HOMEPAGE*/
+
+.hero {
+    height: calc(100vh - 72px); 
+    width: 100vw;
+}
+.smiley {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+.smiley svg {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.smiley svg {
+    animation-name: spin;
+    animation: spin 4s infinite linear;
+    transform-origin: 50% 50%;
+    display: inline-block;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+/*PROJECTS*/
+
+.projects-list {
+    margin: 40px 0px;
+}
+.card-image {
+    grid-column: 1 / span 4;
+    margin-bottom: 16px;
+}
+.card-image img {
+    width: 100%;
+}
+.card-info {
+    grid-column: 1 / span 4;
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-info a {
+    display: block;
+    padding: 0.75rem 0;
+    margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+
+/*CONTACTS*/
+
+.contact-links {
+    margin: 24px 0;
+}
+.contact-links a {
+    grid-column: 1 / span 4;
+    display: block;
+
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+
+/*ABOUT ME*/
+.about-text {
+    grid-column: 1 / span 4;
+}
+
+
+
+
+
+
+
+
+
+/*MEDIA QUERIES*/
+
 @media (min-width: 768px) {
+
+    #logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+        line-height: 3.25rem;
+    }
+    h2 {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+        margin: 1rem 0 1.5rem 0;
+    }
+    h3 {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+    }
+    .tag {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        text-transform: uppercase;
+    }
+
     #burger {
         display: none;
     }
@@ -157,17 +391,77 @@ nav {
     #container.isactive #menu-mobile {
         visibility: hidden;
     }
+
+    .card-info a {
+        padding: 1rem 0;
+        font-size: 1.5rem;
+    }
+    
+    .projects-list {
+        margin: 48px 0;
+    }
+    .card-image {
+        margin-bottom: 24px;
+    }
+    .card-info {
+        margin-bottom: 72px;
+    }
+
+    .smiley svg {
+        width: 40%;
+    }
+
+    /*CONTACTS*/
+
+    .contact-links a {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    /*ABOUT ME*/
+    .about-text {
+        grid-column: 1 / span 3;
+    }
+
 }
 
+@media (min-width: 1024px) {
 
+    .container-grid, .card {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-bottom: 72px;
+    }
 
+    .projects-list {
+        margin: 64px 0;
+    }
+    .card-image {
+        grid-column: 1 / span 3;
+        margin: 0 16px 0 0;
+    }
+    .card-image img {
+        width: 100%;
+    }
+    .card-info {
+        grid-column: 4 / span 2;
+        margin: 32px 0 0 32px;
 
+    }
+    .card-info a {
+        margin-bottom: 40px;
+    }
 
+    .smiley svg {
+        width: 20%;
+    }
 
+    .contact-links a {
+        grid-column: 1 / span 5;
+    }
 
-
-
-
-
-
-
+    /*ABOUT ME*/
+    .about-text {
+        grid-column: 1 / span 3;
+    }
+}
