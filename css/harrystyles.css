@@ -9,7 +9,6 @@
 
     box-sizing: border-box;
     font-family: "arial", sans-serif;
-    background-color: white;
 }
 
 body {
@@ -19,6 +18,8 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    background-color: white;
 }
 
 main {
@@ -27,7 +28,7 @@ main {
     left: 0;
     right: 0;
 
-    max-width: 1280px;
+    max-width: 1080px;
     margin: 0 32px;
 }
 
@@ -45,9 +46,16 @@ figure {
     color: var(--secondary-color);
     text-decoration: underline;
 }
+.project-active {
+    display: none;
+}
 
-
-
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 
 
@@ -63,11 +71,12 @@ h1 {
 h2 {
     font-size: 1.75rem;
     line-height: 2rem;
-    margin: 0.5rem 0 1rem 0;
+    margin: 8px 0 16px 0;
 }
 h3 {
     font-size: 1.25rem;
     line-height: 2rem;
+    margin: 8px 0 16px 0;
 }
 p {
     font-size: 1rem;
@@ -84,6 +93,7 @@ p {
     font-size: 0.75rem;
     line-height: 1.25rem;
     text-transform: uppercase;
+    margin-bottom: 8px;
 }
 a {
     text-decoration: none;
@@ -134,8 +144,10 @@ nav {
 }
 
 #logo {
+    text-transform: uppercase;
+    letter-spacing: 2%;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #burger {
@@ -236,19 +248,22 @@ nav {
 
 
 
+
+
+
 /*HOMEPAGE*/
 
 .hero {
     height: calc(100vh - 72px); 
-    width: 100vw;
+    width: calc(100vh - 64px);
+    align-items: center;
+    justify-content: center;
 }
 .smiley {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
     background-color: transparent;
 }
 .smiley svg {
@@ -299,10 +314,129 @@ nav {
     flex-direction: column;
     justify-content: space-between;
 }
-.card-info a {
+.card-link {
     display: block;
     padding: 0.75rem 0;
     margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+/*PROJECT PAGE*/
+
+.project-body, .project-title, .figma, .project-hero {
+    grid-column: 1 / span 4;
+}
+.project-title {
+    margin: 40px 0;
+}
+.project-title h1 {
+    margin: 8px 0;
+}
+
+.disclaimer {
+    display: inline;
+    font-size: 2.5rem;
+    margin: 24px 0;
+}
+.disclaimer p {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    margin-bottom: 0;
+}
+.figma {
+    margin-bottom: 20px;
+}
+.figma a {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    padding: 10px 0;
+}
+
+.project-hero, .project-body figure {
+    width: 100%;
+    margin: 32px 0;
+}
+.project-hero img, .project-body img {
+    width: 100%;
+
+    object-fit: cover;
+    overflow: hidden;
+}
+
+figcaption {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    margin: 8px 0 8px 16px;
+    width: 20%;
+    display: inline;
+}
+
+.screen {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.more {
+    margin: 64px 0;
+}
+.more p {
+    display: inline;
+    margin-right: 8px;
+}
+.more a {
+    display: inline-flex;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    padding: 8px 0 16px 0;
+}
+.body-list p {
+    margin: 16px;
+}
+.body-list li {
+    padding: 8px 0 6px 0;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+}
+
+.personas {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+.personas figure {
+    padding: 0;
+    width: 50%;
+    margin-bottom: 8px;
+}
+
+.persona p {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    width: 90%;
+}
+
+.persona-name {
+    font-weight: 600;
+}
+.quote {
+    font-style: italic;
+}
+iframe {
+    margin: 40px 0 40px 0;
 }
 
 
@@ -368,8 +502,8 @@ nav {
         line-height: 2.5rem;
     }
     .tag {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
         text-transform: uppercase;
     }
 
@@ -392,7 +526,7 @@ nav {
         visibility: hidden;
     }
 
-    .card-info a {
+    .card-link {
         padding: 1rem 0;
         font-size: 1.5rem;
     }
@@ -429,7 +563,7 @@ nav {
 
     .container-grid, .card {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         margin-bottom: 72px;
     }
 
@@ -437,18 +571,18 @@ nav {
         margin: 64px 0;
     }
     .card-image {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 7;
         margin: 0 16px 0 0;
     }
     .card-image img {
         width: 100%;
     }
     .card-info {
-        grid-column: 4 / span 2;
+        grid-column: 8 / span 5;
         margin: 32px 0 0 32px;
 
     }
-    .card-info a {
+    .card-link {
         margin-bottom: 40px;
     }
 
@@ -457,11 +591,41 @@ nav {
     }
 
     .contact-links a {
-        grid-column: 1 / span 5;
+        grid-column: 1 / span 12;
     }
 
     /*ABOUT ME*/
     .about-text {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 7;
     }
+
+
+    /*PROJECT PAGE*/
+
+
+    .personas {
+        display: flex;
+        flex-direction: row;
+        align-items: space-between;
+        margin-bottom: 60px;
+    }
+    .persona:nth-child(1), .persona:nth-child(2) {
+        margin-right: 20px;
+    }
+    .personas figure {
+        padding: 0;
+        width: 50%;
+        margin-bottom: 8px;
+    }
+    
+    .persona {
+        width: 33.33%; 
+    }
+    
+    .persona p {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        width: 90%;
+    }
+
 }
