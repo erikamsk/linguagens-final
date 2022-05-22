@@ -2,11 +2,11 @@
 
     {% for portfolio in site.portfolio %}
 
-    <div class="card">
+    <div class="card" onclick="location.href='{{ portfolio.url }}';" style="cursor: pointer;">
 
         <figure class="card-image">
 
-            <img src="/assets/chuck.gif" alt="mockup image with five iphones showing screenshots of the sunweb app in a red background">
+            <img src="{{ portfolio.image }}" alt="{{ portfolio.img-alt }}">
         
         </figure>
 
@@ -20,7 +20,7 @@
             </div>
 
             <div class="card-link">
-                <a href="{{ portfolio.url }}">⟶ View Project</a>
+                <p>⟶ View Project</p>
             </div>
 
         </div>
