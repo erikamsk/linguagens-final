@@ -7,7 +7,7 @@
 
 .container-grid { margin-bottom: $spacing-unit * 2; }
 
-h1, h2 { color: $brand-color }
+h1, .project-content h2 { color: $brand-color }
   
 .active {
   color: $brand-color;
@@ -182,10 +182,9 @@ nav {
 .projects-list {
   margin: 40px 0px;
 
+  .tag { color: $brand-color}
+
   .card:hover { color: $brand-color; }
-  h2:hover {
-    color: $text-color;
-  }
 
   .card-image {
     grid-column: 1 / span 4;
@@ -204,6 +203,7 @@ nav {
     display: block;
     padding: 0.75rem 0;
     margin-bottom: 24px;
+    color: $brand-color;
   }
 } 
 
@@ -257,25 +257,28 @@ nav {
   .personas {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 60px;
-  
+    gap: $spacing-unit * 2;
+
     figure {
+      margin: 0 auto;
       width: 50%;
-      margin-bottom: 8px;
+      padding-bottom: 8px;
     }
   
     .persona p {
+      text-align: center;
       font-size: 0.75rem;
       line-height: 1.25rem;
       width: 90%;
+      margin: 0 auto;
     }
   }
       
   .persona-name { font-weight: 600; }
   .quote { font-style: italic; }
-  .persona, .empathy-maps { margin: 0 auto; }
+  
+  .empathy-maps { margin: 0 auto; }
   
   .more {
     margin: 64px 0;
@@ -364,28 +367,11 @@ nav {
   .project-hero { padding: 40px 0; }
 
   .personas {
-    display: flex;
     flex-direction: row;
-    align-items: space-between;
-    margin-bottom: 60px;
+    justify-content: space-between;
+    gap: 20px;
 
-    figure {
-      padding: 0;
-      width: 50%;
-      margin-bottom: 8px;
-    }
-
-    .persona {
-      width: 33.33%;
-  
-      p {
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-        width: 90%;
-      }
-    }
-
-    :nth-child(1), :nth-child(2) { margin-right: 20px; }
+    .persona { width: 33.33%; }
   }
 }
     
