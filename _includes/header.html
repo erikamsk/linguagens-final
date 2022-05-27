@@ -2,17 +2,17 @@
   <nav>
     <div id="container">
   
-      <a id="logo" href="{{site.baseurl}}/index.html">erika maessaka</a>
+      <a id="logo" href="{{ site.baseurl }}/index.html">erika maessaka</a>
 
       <ul id="menu" role="menu">
         {% for item in site.data.navlist %}
-        <li><a class="{% if page.url == item.url %}active{% endif %}" href="{{site.baseurl}}/{{ item.url }}">{{ item.title }}</a></li>
+        <li><a class="{% if page.url == item.url %}active{% endif %}" href="{{ site.baseurl }}/{{ item.url }}">{{ item.title }}</a></li>
         {% endfor %}
       </ul>
 
       <ul id="menu-mobile" role="menu">
         {% for item in site.data.navlist %}
-        <li><a class="{% if page.url == item.url %}active{% endif %}" href="{{site.baseurl}}/{{ item.url }}">{{ item.title }}</a></li>
+        <li><a class="{% if page.url == item.url %}active{% endif %}" href="{{ site.baseurl }}/{{ item.url }}">{{ item.title }}</a></li>
         {% endfor %}
       </ul>
   
