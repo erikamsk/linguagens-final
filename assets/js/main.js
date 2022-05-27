@@ -6,7 +6,7 @@ function toggleMenu(event) {
     container.classList.toggle('isactive');
 
     const isactive = container.classList.contains('isactive');
-    event.currentTarget.setAttribute('aria-espanded', 'true');
+    event.currentTarget.setAttribute('aria-expanded', 'true');
 
     if (isactive) {
         event.currentTarget.setAttribute('aria-label', 'close menu');

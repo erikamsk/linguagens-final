@@ -4,7 +4,7 @@
   
       <a id="logo" href="/index.html">erika maessaka</a>
 
-      <ul id="menu">
+      <ul id="menu" role="menu">
         {% for item in site.data.navlist %}
         <li><a class="{% if page.url == item.url %}active{% endif %}" href="{{ item.url }}">{{ item.title }}</a></li>
         {% endfor %}
