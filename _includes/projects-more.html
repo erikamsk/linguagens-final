@@ -5,7 +5,7 @@
     {% for portfolio in site.portfolio %}
 
     <ul>
-        <li class="{% if page.url == portfolio.url %}project-active{% endif %}"><p>☞</p><a href="{{ portfolio.url }}" title="{{ portfolio.link-title }}">{{ portfolio.title }}</a></li>
+        <li class="{% if page.url == portfolio.url %}project-active{% endif %}"><p>☞</p><a href="{{site.baseurl}}/{{ portfolio.url }}" title="{{ portfolio.link-title }}">{{ portfolio.title }}</a></li>
     </ul>   
 
     {% endfor %}

@@ -2,7 +2,7 @@
 
     {% for portfolio in site.portfolio %}
 
-    <div class="card" onclick="location.href='{{ portfolio.url }}';" style="cursor: pointer;">
+    <div class="card" onclick="location.href='{{site.baseurl}}/{{ portfolio.url }}';" style="cursor: pointer;">
 
         <figure class="card-image">
 
@@ -20,7 +20,7 @@
             </div>
 
             <div class="card-link">
-                <a href="{{ portfolio.url }}">⟶ View Project</a>
+                <a href="{{site.baseurl}}/{{ portfolio.url }}">⟶ View Project</a>
             </div>
 
         </div>
